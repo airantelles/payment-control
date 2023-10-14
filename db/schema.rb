@@ -13,24 +13,24 @@
 ActiveRecord::Schema.define(version: 2023_10_14_005703) do
 
   create_table "customers", force: :cascade do |t|
-    t.string "name", limit: 40
-    t.integer "day"
-    t.integer "invoice_type_id"
+    t.string "name", limit: 40, null: false
+    t.integer "day", null: false
+    t.integer "invoice_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "invoice_types", force: :cascade do |t|
-    t.string "name", limit: 40
+    t.string "name", limit: 40, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "invoices", force: :cascade do |t|
-    t.integer "customer_id"
-    t.date "event_date"
+    t.integer "customer_id", null: false
+    t.date "event_date", null: false
     t.text "logs"
-    t.boolean "success"
+    t.boolean "success", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
