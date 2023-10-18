@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:edit, :update, :destroy]
+  before_action :set_invoice_type_and_days, only: [:edit, :new, :create]
   skip_before_action :verify_authenticity_token, only:[:index, :create, :update,:destroy]
 
   def index
@@ -17,18 +18,22 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     if @customer.save
-      render json: @customer, status: :created
+      redirect_to customers_url, notice: 'Customer was successfully created.'
     else
-      render json: { errors: @customer.errors.full_messages }
+      flash[:class] = "is-invalid"
+      flash[:error] = @customer.errors.full_messages.to_sentence
+      redirect_to new_customer_path
     end
   end
 
   def update
     if @customer
       @customer.update(customer_params)
-      redirect_to @customer, notice: 'Customer was successfully updated.'
+      redirect_to customers_url, notice: 'Customer was successfully created.'
     else
-      render json: { errors: "Record not found" }
+      flash[:class] = "is-invalid"
+      flash[:error] = @customer.errors.full_messages.to_sentence
+      redirect_to new_customer_path
     end
   end
   
@@ -48,6 +53,11 @@ class CustomersController < ApplicationController
 
   def set_customer
     @customer = Customer.find_by(id: params[:id])
+  end
+  
+  def set_invoice_type_and_days
+    @invoice_types = InvoiceType.all
+    @days = (1..28).to_a
   end
 
   def customer_params
