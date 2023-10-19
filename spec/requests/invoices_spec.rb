@@ -16,4 +16,13 @@ RSpec.describe "Invoices", type: :request do
       expect(assigns(:invoices)).to eq(Invoice.all)
     end
   end
+
+  describe '#new ' do 
+    it 'render :new' do
+      new_invoice_type = FactoryBot.build :invoice_type
+      get "/invoices/new"
+      expect(response).to render_template(:new)
+    end
+  end 
+  
 end
