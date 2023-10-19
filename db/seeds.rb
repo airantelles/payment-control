@@ -14,7 +14,7 @@ invoice_types = InvoiceType.create(
   ]
 )
 
-Customer.create(
+customers = Customer.create(
   [
     {name: "Usuário 1", day: 13, invoice_type_id: invoice_types[0].id},
     {name: "Usuário 2", day: 17, invoice_type_id: invoice_types[1].id},
@@ -22,5 +22,46 @@ Customer.create(
     {name: "Usuário 4", day: 19, invoice_type_id: invoice_types[1].id},
     {name: "Usuário 5", day: 20, invoice_type_id: invoice_types[0].id},
     {name: "Usuário 6", day: 25, invoice_type_id: invoice_types[2].id}
+  ]
+)
+
+Invoice.create(
+  [
+    {
+      customer_id: customers[0].id,
+      event_date: '2023-10-13',
+      logs: nil,
+      success: true
+    },
+    {
+      customer_id: customers[1].id,
+      event_date: '2023-10-17',
+      logs: 'Error processing invoice',
+      success: false
+    },
+    {
+      customer_id: customers[2].id,
+      event_date: '2023-10-16',
+      logs: nil,
+      success: true
+    },
+    {
+      customer_id: customers[3].id,
+      event_date: '2023-09-19',
+      logs: nil,
+      success: true
+    },
+    {
+      customer_id: customers[4].id,
+      event_date: '2023-09-20',
+      logs: 'Error processing invoice',
+      success: false
+    },
+    {
+      customer_id: customers[5].id,
+      event_date: '2023-09-25',
+      logs: 'Error processing invoice',
+      success: true
+    }
   ]
 )
