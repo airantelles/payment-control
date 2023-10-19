@@ -4,4 +4,5 @@ class Customer < ApplicationRecord
   validates :invoice_type_id, presence: true
 
   belongs_to :invoice_type
+  has_many :invoices
 end
