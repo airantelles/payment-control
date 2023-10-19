@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_14_005703) do
+ActiveRecord::Schema.define(version: 2023_10_19_034608) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name", limit: 40, null: false
@@ -33,8 +33,10 @@ ActiveRecord::Schema.define(version: 2023_10_14_005703) do
     t.boolean "success", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "invoice_type_id", null: false
   end
 
   add_foreign_key "customers", "invoice_types"
   add_foreign_key "invoices", "customers"
+  add_foreign_key "invoices", "invoice_types"
 end

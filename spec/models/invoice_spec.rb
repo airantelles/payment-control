@@ -1,11 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Invoice, type: :model do
-  let(:customer) { create(:customer) }
+    let(:customer) { create(:customer) }
+    let(:invoice_type) { create(:invoice_type) }
+    let(:invoice) { create(:invoice) }
 
   it "is valid with valid attributes" do
     invoice = Invoice.new(
       customer: customer,
+      invoice_type: invoice_type,
       event_date: Date.today,
       logs: nil,
       success: true
@@ -16,6 +19,7 @@ RSpec.describe Invoice, type: :model do
   it "is not valid without an event_date" do
     invoice = Invoice.new(
       customer: customer,
+      invoice_type: invoice_type,
       logs: "Logs",
       success: true
     )
@@ -25,6 +29,7 @@ RSpec.describe Invoice, type: :model do
   it "is valid without logs" do
     invoice = Invoice.new(
       customer: customer,
+      invoice_type: invoice_type,
       event_date: Date.today,
       success: true
     )
@@ -34,6 +39,7 @@ RSpec.describe Invoice, type: :model do
   it "is not valid without a valid success value" do
     invoice = Invoice.new(
       customer: customer,
+      invoice_type: invoice_type,
       event_date: Date.today,
       logs: "Logs",
       success: nil
@@ -44,6 +50,7 @@ RSpec.describe Invoice, type: :model do
   it "is valid with a true success value" do
     invoice = Invoice.new(
       customer: customer,
+      invoice_type: invoice_type,
       event_date: Date.today,
       logs: "Logs",
       success: true
@@ -54,6 +61,7 @@ RSpec.describe Invoice, type: :model do
   it "is valid with a false success value" do
     invoice = Invoice.new(
       customer: customer,
+      invoice_type: invoice_type,
       event_date: Date.today,
       logs: "Logs",
       success: false

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Invoices", type: :request do
   let(:customer) { create(:customer) }
   let(:invoice_type) { create(:invoice_type) }
-  let(:invoice) { create(:invoice) }
+  # let(:invoice) { create(:invoice) }
 
   describe '#index' do
     it "should render index page" do
