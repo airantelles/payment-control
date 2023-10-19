@@ -24,11 +24,12 @@ class InvoiceTypesController < ApplicationController
   end
 
   def update
-    if @invoice_type
-      @invoice_type.update(invoice_type_params)
-      redirect_to @invoice_type, notice: 'InvoiceType was successfully updated.'
+    if @invoice_type.update(invoice_type_params)
+      redirect_to invoice_types_url, notice: 'Invoice type was successfully created.'
     else
-      render json: { errors: "Record not found" }
+      flash[:class] = "is-invalid"
+      flash[:errors] = @invoice_type.errors
+      redirect_to edit_invoice_type_path
     end
   end
   
