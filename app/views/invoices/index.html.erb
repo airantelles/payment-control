@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="m-md-2">
+    <div class="row mt-2">
+      <div class="col">
+        <table class="table table-bordered table-light br-costumers">
+          <thead class="table-secondary" width="500">
+            <tr>
+              <th width="50%">Cliente</th>
+              <th width="10%">Data do pagamento</th>
+              <th width="20%">Forma de pagamento</th>
+              <th width="10">Realizado com sucesso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @invoices.each do |invoice| %>
+              <tr>
+                <td><%= invoice.customer.name %></td>
+                <td><%= invoice.event_date.strftime("%d/%m/%Y") %></td>
+                <td><%= invoice.customer.invoice_type.name %></td>
+                <td><%= invoice.success ? 'Sim' : 'Não' %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
