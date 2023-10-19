@@ -29,36 +29,42 @@ Invoice.create(
   [
     {
       customer_id: customers[0].id,
+      invoice_type: customers[0].invoice_type,
       event_date: '2023-10-13',
       logs: nil,
       success: true
     },
     {
       customer_id: customers[1].id,
+      invoice_type: customers[1].invoice_type,
       event_date: '2023-10-17',
       logs: 'Error processing invoice',
       success: false
     },
     {
       customer_id: customers[2].id,
+      invoice_type: customers[2].invoice_type,
       event_date: '2023-10-16',
       logs: nil,
       success: true
     },
     {
       customer_id: customers[3].id,
+      invoice_type: customers[3].invoice_type,
       event_date: '2023-09-19',
       logs: nil,
       success: true
     },
     {
       customer_id: customers[4].id,
+      invoice_type: customers[4].invoice_type,
       event_date: '2023-09-20',
       logs: 'Error processing invoice',
       success: false
     },
     {
       customer_id: customers[5].id,
+      invoice_type: customers[5].invoice_type,
       event_date: '2023-09-25',
       logs: 'Error processing invoice',
       success: true
