@@ -77,26 +77,25 @@ RSpec.describe "InvoiceTypes", type: :request do
     describe '#update success' do
       it 'render :update success' do
         new_invoice_type = FactoryBot.create :invoice_type
+        new_name = "Edit Sucess"
         patch "/invoice_types/#{new_invoice_type.id}", params: { 
           invoice_type: { 
-            name: 'Customer test new name' 
+            name: new_name
           }, 
           id: new_invoice_type.id 
         }
-        expect(response).to redirect_to @invoice_type
+        expect(InvoiceType.find_by(id: new_invoice_type.id).name).to eq(new_name)
       end
     end
     
     describe '#update error' do 
       it 'render :update error' do
-        patch "/invoice_types/#{99}", params: {
-          id: 99,
-          invoice_type: {
-            error: true,
-          }
-        }
-        invoice_type = JSON.parse(response.body)
-        expect("Record not found").to eq(invoice_type["errors"])
+        invalid_params = { name: "" }
+        patch "/invoice_types/#{invoice_type.id}/", params: { id: invoice_type.id, invoice_type: invalid_params }
+        expect(response).to redirect_to(edit_invoice_type_path(invoice_type))
+        expect(flash[:class]).to eq("is-invalid")
+        expect(flash[:errors]).to be_present
+        expect(flash[:errors].full_messages).to include("Name can't be blank")
       end
     end
   end

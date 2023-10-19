@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="m-md-2">
+    <div class="row">
+      <div class="col text-end">
+        <%= link_to "Adicionar forma de pagamento", "invoice_types/new", class: "btn btn-secondary" %>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col">
+        <table class="table table-bordered table-light br-costumers">
+          <thead class="table-secondary" width="500">
+            <tr>
+              <th width="95%">Nome</th>
+              <th width="10%"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @invoice_types.each do |invoice_type| %>
+              <tr>
+                <td><%= invoice_type.name %></td>
+                <td>
+                  <%= link_to "Editar", "invoice_types/#{invoice_type.id}/edit", class: "btn btn-primary" %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
