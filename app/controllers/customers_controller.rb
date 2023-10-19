@@ -21,19 +21,18 @@ class CustomersController < ApplicationController
       redirect_to customers_url, notice: 'Customer was successfully created.'
     else
       flash[:class] = "is-invalid"
-      flash[:error] = @customer.errors.full_messages.to_sentence
+      flash[:errors] = @customer.errors
       redirect_to new_customer_path
     end
   end
 
   def update
-    if @customer
-      @customer.update(customer_params)
+    if @customer.update(customer_params)
       redirect_to customers_url, notice: 'Customer was successfully created.'
     else
       flash[:class] = "is-invalid"
-      flash[:error] = @customer.errors.full_messages.to_sentence
-      redirect_to new_customer_path
+      flash[:errors] = @customer.errors
+      redirect_to edit_customer_path
     end
   end
   

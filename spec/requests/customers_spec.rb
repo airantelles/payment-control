@@ -5,7 +5,7 @@ RSpec.describe "/customers", type: :request do
   let(:customer) { create(:customer) }
   let(:invoice_type) { create(:invoice_type) }
 
-  context "Get customers" do
+  context "Customers" do
     describe '#show' do
       it 'should return the customer with given id' do
         get '/customers/1'
@@ -37,23 +37,22 @@ RSpec.describe "/customers", type: :request do
             invoice_type_id: invoice_type.id
           }
         }
-        customer = JSON.parse(response.body)
-        expect(new_customer.name).to eq(customer["name"])
-        expect(new_customer.day).to eq(customer["day"])
-        expect(new_customer.invoice_type_id).to eq(customer["invoice_type_id"])
+        expect(response).to redirect_to(customers_url)
+        expect(flash[:notice]).to eq('Customer was successfully created.')
       end
     end
     
     describe '#create error' do
       it 'render :create error' do
+        expected = ["Name can't be blank", "Day can't be blank", "Invoice type can't be blank", "Invoice type must exist"]
         post "/customers", params: {
           customer: {
-            name: "Test error",
+            error: "Test error",
           }
         }
-        customer = JSON.parse(response.body)
-        expect("Day can't be blank").to eq(customer["errors"][0])
-        expect("Invoice type can't be blank").to eq(customer["errors"][1])
+        flash[:errors].each_with_index do |error, index|
+          expect(expected[index]).to eq(error.full_message)
+        end
       end
     end
     
@@ -84,27 +83,24 @@ RSpec.describe "/customers", type: :request do
 
     describe '#update success' do
       it 'render :update success' do
-        new_customer = FactoryBot.create :customer
-        patch "/customers/#{new_customer.id}", params: { 
+        new_name = 'Customer test new name'
+        patch "/customers/#{customer.id}/", params: { 
           customer: { 
-            name: 'Customer test new name' 
-          }, 
-          id: new_customer.id 
+            name: new_name
+          }
         }
-        expect(response).to redirect_to @customer
+        expect(Customer.find_by(id: 12).name).to eq(new_name)
       end
     end
     
     describe '#update error' do 
       it 'render :update error' do
-        patch "/customers/#{99}", params: {
-          id: 99,
-          customer: {
-            error: true,
-          }
-        }
-        customer = JSON.parse(response.body)
-        expect("Record not found").to eq(customer["errors"])
+        invalid_params = { name: "" }
+        patch "/customers/#{customer.id}/", params: { id: customer.id, customer: invalid_params }
+        expect(response).to redirect_to(edit_customer_path(customer))
+        expect(flash[:class]).to eq("is-invalid")
+        expect(flash[:errors]).to be_present
+        expect(flash[:errors].full_messages).to include("Name can't be blank")
       end
     end
     
