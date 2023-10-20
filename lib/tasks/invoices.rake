@@ -1,6 +1,6 @@
 namespace :invoices do
   desc "Process invoices"
-  task invoice_process: :environment do
+  task process: :environment do
     current_date = DateTime.now
     Customer.where("day <= ?", current_date.day).each do |customer|
       if customer.invoices.where(event_date: current_date.beginning_of_month..current_date.end_of_month).size == 0
@@ -24,7 +24,7 @@ namespace :invoices do
   end
   
   desc "Reprocess invoices"
-  task invoice_reprocess: :environment do
+  task reprocess: :environment do
     Customer.all.each do |customer|
       customer.invoices.where(success: false).each do |invoice|
         success = random_boolean
