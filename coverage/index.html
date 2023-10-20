@@ -2428,7 +2428,7 @@
 
             
 
-            <code class="ruby">  task invoice_process: :environment do</code>
+            <code class="ruby">  task process: :environment do</code>
           </li>
         </div>
       
@@ -2692,7 +2692,7 @@
 
             
 
-            <code class="ruby">  task invoice_reprocess: :environment do</code>
+            <code class="ruby">  task reprocess: :environment do</code>
           </li>
         </div>
       
@@ -7069,7 +7069,7 @@
 
             
 
-            <code class="ruby">  describe &#39;invoice_process&#39; do</code>
+            <code class="ruby">  describe &#39;process&#39; do</code>
           </li>
         </div>
       
@@ -7102,7 +7102,7 @@
 
             
 
-            <code class="ruby">      expect { Rake::Task[&#39;invoices:invoice_process&#39;].invoke }.to change(Invoice, :count).by(13)</code>
+            <code class="ruby">      expect { Rake::Task[&#39;invoices:process&#39;].invoke }.to change(Invoice, :count).by(13)</code>
           </li>
         </div>
       
@@ -7146,7 +7146,7 @@
 
             
 
-            <code class="ruby">  describe &#39;invoice_reprocess&#39; do</code>
+            <code class="ruby">  describe &#39;reprocess&#39; do</code>
           </li>
         </div>
       
@@ -7212,7 +7212,7 @@
 
             
 
-            <code class="ruby">      expect { Rake::Task[&#39;invoices:invoice_reprocess&#39;].invoke }.to change { invoice.reload.success }.to(true)</code>
+            <code class="ruby">      expect { Rake::Task[&#39;invoices:reprocess&#39;].invoke }.to change { invoice.reload.success }.to(true)</code>
           </li>
         </div>
       

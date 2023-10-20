@@ -6,10 +6,10 @@ Certifique-se de ter o Ruby (2.7.2) e o Ruby on Rails (6.1.7) instalados em sua 
 
 #### Clone o repositório:
 
-    ```bash
-    git clone https://github.com/monde-testes/teste-ruby-airan.git
-    cd teste-ruby-airan
-    ```
+  ```bash
+  git clone https://github.com/monde-testes/teste-ruby-airan.git
+  cd teste-ruby-airan
+  ```
 
 #### Execute a instalação das dependências do projeto
 
@@ -62,11 +62,11 @@ Você também pode executar tarefas agendadas manualmente sempre que precisar. P
 #### Tarefa de processamento de pagamentos
 
   ```bash
-  rake invoices:invoice_process
+  rake invoices:process
   ```
   
 #### Tarefa de reprocessamento de pagamentos
 
   ```bash
-  rake invoices:invoice_reprocess
+  rake invoices:reprocess
   ```

@@ -8,9 +8,9 @@
 set :output, "#{path}/log/cron_log.log"
 
 every 1.day, at: '04:00pm' do
-  rake 'invoice_process:run'
+  rake 'process:run'
 end
 
 every 1.day, at: '03:00pm' do
-  rake 'invoice_reprocess:run'
+  rake 'reprocess:run'
 end

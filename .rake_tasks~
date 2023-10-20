@@ -38,8 +38,8 @@ db:setup
 db:structure:dump
 db:structure:load
 db:version
-invoices:invoice_process
-invoices:invoice_reprocess
+invoices:process
+invoices:reprocess
 log:clear
 middleware
 restart
