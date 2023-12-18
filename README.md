@@ -11,6 +11,17 @@ Certifique-se de ter o Ruby (2.7.2) e o Ruby on Rails (6.1.7) instalados em sua 
   cd payment-control
   ```
 
+#### Instale o nvm e a versão 2.7.2 do Ruby:
+
+  ```bash
+  sudo apt-get update
+  sudo apt-get install -y curl gpg
+  \curl -sSL https://get.rvm.io | bash -s stable
+  source ~/.rvm/scripts/rvm
+  rvm install "ruby-2.7.2"
+  rvm use 2.7.2 --default
+  ```
+
 #### Execute a instalação das dependências do projeto
 
   ```bash
