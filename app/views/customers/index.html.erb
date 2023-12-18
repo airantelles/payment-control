@@ -7,32 +7,34 @@
     </div>
     <div class="row mt-2">
       <div class="col">
-        <table class="table table-bordered table-light br-costumers">
-          <thead class="table-secondary" width="500">
-            <tr>
-              <th width="40%">Nome</th>
-              <th width="10%">Dia de pagamento</th>
-              <th width="40">Forma de pagamento</th>
-              <th width="10%">Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @customers.each do |customer| %>
+        <div class="table-responsive">
+          <table class="table table-bordered table-light br-costumers">
+            <thead class="table-secondary">
               <tr>
-                <td><%= customer.name %></td>
-                <td><%= customer.day %></td>
-                <td><%= customer.invoice_type.name %></td>
-                <td>
-                  <%= link_to "Editar", "customers/#{customer.id}/edit", class: "btn btn-primary" %>
-                  <button class="btn btn-danger delete-customer-button" data-bs-toggle="modal" 
-                    data-bs-target="#confirmDeleteModal" data-customer-id="<%= customer.id %>">
-                    Excluir
-                  </button>
-                </td>
+                <th>Nome</th>
+                <th>Dia de pagamento</th>
+                <th>Forma de pagamento</th>
+                <th>Ações</th>
               </tr>
-            <% end %>
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              <% @customers.each do |customer| %>
+                <tr>
+                  <td><%= customer.name %></td>
+                  <td><%= customer.day %></td>
+                  <td><%= customer.invoice_type.name %></td>
+                  <td>
+                    <%= link_to "Editar", "customers/#{customer.id}/edit", class: "btn btn-primary" %>
+                    <button class="btn btn-danger delete-customer-button" data-bs-toggle="modal" 
+                      data-bs-target="#confirmDeleteModal" data-customer-id="<%= customer.id %>">
+                      Excluir
+                    </button>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
