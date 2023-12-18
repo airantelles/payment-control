@@ -17,6 +17,22 @@ Certifique-se de ter o Ruby (2.7.2) e o Ruby on Rails (6.1.7) instalados em sua 
   bundle install
   ```
 
+#### Intalação do node, npm e o yarn:
+
+  ```bash
+  curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+  sudo apt-get install npm
+  sudo apt-get install -y nodejs
+  sudo npm install -g yarn
+  ```
+#### Configuração do yarn e do webpacker:
+
+  ```bash
+  rails webpacker:install
+  yarn install
+  rails webpacker:compile
+  ```
+
 #### Configure o banco de dados de desenvolvimento
 
   ```bash
@@ -48,7 +64,7 @@ Certifique-se de ter o Ruby (2.7.2) e o Ruby on Rails (6.1.7) instalados em sua 
 #### Execute o servidor localmente
 
   ```bash
-  rails server
+  rails server -b 0.0.0.0 -p 3000
   ```
 
 #### Acessar a aplicação pelo navegador
