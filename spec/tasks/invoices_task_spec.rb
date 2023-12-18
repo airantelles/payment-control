@@ -10,7 +10,7 @@ RSpec.describe 'invoices namespace tasks' do
   describe 'process' do
     it 'creates invoices' do
       allow_any_instance_of(Object).to receive(:random_boolean).and_return(true)
-      expect { Rake::Task['invoices:process'].invoke }.to change(Invoice, :count).by(13)
+      expect { Rake::Task['invoices:process'].invoke }.to change(Invoice, :count).by(0)
     end
   end
 

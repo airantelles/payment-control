@@ -1,10 +1,10 @@
 FROM ruby:2.7.2
 RUN apt-get update -qq && apt-get install -y nodejs
-WORKDIR /teste-ruby-airan
-COPY Gemfile /teste-ruby-airan/Gemfile
-COPY Gemfile.lock /teste-ruby-airan/Gemfile.lock
+WORKDIR /payment-control
+COPY Gemfile /payment-control/Gemfile
+COPY Gemfile.lock /payment-control/Gemfile.lock
 RUN bundle install
-COPY . /teste-ruby-airan
+COPY . /payment-control
 
 
 COPY entrypoint.sh /usr/bin/

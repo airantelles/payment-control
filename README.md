@@ -7,8 +7,8 @@ Certifique-se de ter o Ruby (2.7.2) e o Ruby on Rails (6.1.7) instalados em sua 
 #### Clone o repositório:
 
   ```bash
-  git clone https://github.com/monde-testes/teste-ruby-airan.git
-  cd teste-ruby-airan
+  git clone https://github.com/monde-testes/payment-control.git
+  cd payment-control
   ```
 
 #### Execute a instalação das dependências do projeto

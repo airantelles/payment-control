@@ -59,6 +59,7 @@ group :test do
   gem 'webdrivers'
   gem 'simplecov'
   gem 'database_cleaner-active_record'
+  gem 'rspec-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

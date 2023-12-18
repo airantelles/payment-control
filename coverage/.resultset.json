@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/var/www/html/airantelles/teste-ruby-airan/app/models/customer.rb": {
+      "/var/www/html/airantelles/payment-control/app/models/customer.rb": {
         "lines": [
           1,
           1,
@@ -13,14 +13,14 @@
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/app/models/application_record.rb": {
+      "/var/www/html/airantelles/payment-control/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/spec/models/invoice_spec.rb": {
+      "/var/www/html/airantelles/payment-control/spec/models/invoice_spec.rb": {
         "lines": [
           1,
           null,
@@ -100,7 +100,7 @@
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/app/models/invoice.rb": {
+      "/var/www/html/airantelles/payment-control/app/models/invoice.rb": {
         "lines": [
           1,
           1,
@@ -111,7 +111,7 @@
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/spec/models/invoice_type_spec.rb": {
+      "/var/www/html/airantelles/payment-control/spec/models/invoice_type_spec.rb": {
         "lines": [
           1,
           null,
@@ -134,14 +134,14 @@
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/app/models/invoice_type.rb": {
+      "/var/www/html/airantelles/payment-control/app/models/invoice_type.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/spec/requests/customers_spec.rb": {
+      "/var/www/html/airantelles/payment-control/spec/requests/customers_spec.rb": {
         "lines": [
           1,
           1,
@@ -270,31 +270,31 @@
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/app/helpers/application_helper.rb": {
+      "/var/www/html/airantelles/payment-control/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/app/helpers/customers_helper.rb": {
+      "/var/www/html/airantelles/payment-control/app/helpers/customers_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/app/helpers/invoice_types_helper.rb": {
+      "/var/www/html/airantelles/payment-control/app/helpers/invoice_types_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/app/helpers/invoices_helper.rb": {
+      "/var/www/html/airantelles/payment-control/app/helpers/invoices_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/spec/requests/invoice_types_spec.rb": {
+      "/var/www/html/airantelles/payment-control/spec/requests/invoice_types_spec.rb": {
         "lines": [
           1,
           null,
@@ -400,7 +400,7 @@
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/spec/requests/invoices_spec.rb": {
+      "/var/www/html/airantelles/payment-control/spec/requests/invoices_spec.rb": {
         "lines": [
           1,
           null,
@@ -432,7 +432,7 @@
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/spec/tasks/invoices_task_spec.rb": {
+      "/var/www/html/airantelles/payment-control/spec/tasks/invoices_task_spec.rb": {
         "lines": [
           1,
           1,
@@ -462,7 +462,7 @@
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/app/controllers/customers_controller.rb": {
+      "/var/www/html/airantelles/payment-control/app/controllers/customers_controller.rb": {
         "lines": [
           1,
           1,
@@ -531,13 +531,13 @@
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/app/controllers/application_controller.rb": {
+      "/var/www/html/airantelles/payment-control/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/app/controllers/invoice_types_controller.rb": {
+      "/var/www/html/airantelles/payment-control/app/controllers/invoice_types_controller.rb": {
         "lines": [
           1,
           1,
@@ -589,7 +589,7 @@
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/app/controllers/invoices_controller.rb": {
+      "/var/www/html/airantelles/payment-control/app/controllers/invoices_controller.rb": {
         "lines": [
           1,
           1,
@@ -604,17 +604,17 @@
           null
         ]
       },
-      "/var/www/html/airantelles/teste-ruby-airan/lib/tasks/invoices.rake": {
+      "/var/www/html/airantelles/payment-control/lib/tasks/invoices.rake": {
         "lines": [
           1,
           1,
           1,
           1,
           1,
-          14,
-          13,
-          13,
-          13,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           null,
@@ -657,6 +657,6 @@
         ]
       }
     },
-    "timestamp": 1697753953
+    "timestamp": 1701891126
   }
 }
